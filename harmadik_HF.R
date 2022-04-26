@@ -90,15 +90,20 @@ top <- components[1:samp_size,1:3]
 data <- c()
 
 #downloading necessary data
-data <- as.data.frame(do.call(cbind,sapply(seq(1,samp_size), function(x) getSymbols(as.character(top$Symbol[x]), src = "yahoo", from = date_start, to = date_end, auto.assign = FALSE )[,6])))
+data <- as.data.frame(do.call(cbind,sapply(seq(1,samp_size), 
+                function(x) getSymbols(as.character(top$Symbol[x]), src = "yahoo", 
+                  from = date_start, to = date_end, auto.assign = FALSE )[,6])))
 
 #500 stock calculation block
 #data_full <- data #for total sp500 calculation. once downloaded and saved
 #top_full <- top #for total sp500 calculation. once downloaded and saved
 #data <- data_full
 #top <- top_full
-#firstdates <- c("2000-01-01","2001-01-01","2002-01-01", "2003-01-01", "2004-01-01","2005-01-01","2006-01-01","2007-01-01","2008-01-01","2009-01-01","2010-01-01","2011-01-01","2012-01-01", "2013-01-01", "2014-01-01","2015-01-01","2016-01-01","2017-01-01","2018-01-01","2019-01-01", "2020-01-01", "2021-01-01")
-####
+#firstdates <- c("2000-01-01","2001-01-01","2002-01-01", "2003-01-01", "2004-01-01",
+#"2005-01-01","2006-01-01","2007-01-01","2008-01-01","2009-01-01","2010-01-01",
+#"2011-01-01","2012-01-01", "2013-01-01", "2014-01-01","2015-01-01","2016-01-01",
+#"2017-01-01","2018-01-01","2019-01-01", "2020-01-01", "2021-01-01")
+
 
 ncol(data)
 #return calculation
